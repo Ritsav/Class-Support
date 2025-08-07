@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <script>
+        const fruits = ['apple', 'orange', 'mango']
+
+        function add_fruits(new_fruit) {
+            fruits.push(new_fruit)
+        }
+
+        function display() {
+            document.write("<br>Fruits: ", fruits)
+        }
+
+        add_fruits("papaya")
+        display()
+        add_fruits('pear')
+        display()
+    </script>
+</body>
+</html>
