@@ -20,13 +20,48 @@
         function display_async() {
             setTimeout(() => {
                 document.write("<br>Fruits: ", fruits)
-            })
+            }, 2000)
         }
 
-        add_fruits_async("papaya", 'banana', 'kiwi')
-        display_async()
-        add_fruits_async('pear')
-        display_async()
+        // add_fruits_async("papaya", 'banana', 'kiwi')
+        // display_async()
+        // add_fruits_async('pear')
+        // display_async()
+
+        // callback -- the function that needs to wait is passed in first function
+        function add_fruits_callback(new_fruit, cb) {
+            setTimeout(() => {
+                fruits.push(new_fruit)
+                cb()
+            })
+        }
+        // add_fruits_callback("papaya", display_async)
+
+        // promise - .then, .catch
+        function add_fruits_promise(new_fruit) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    let error = false
+                    if (!error) {
+                        fruits.push(new_fruit)
+                        resolve()
+                    }
+                    else
+                    {
+                        reject()
+                    }
+                }, 2000)
+            })
+        }
+        
+        add_fruits_promise('pear')
+        .then(() => {
+            display_async()
+        })
+        .catch(() => {
+            document.write("Something went wrong")
+        })
+        // async await
     </script>
 </body>
 </html>
