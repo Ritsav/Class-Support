@@ -10,14 +10,23 @@
     <script>
         let name = localStorage.getItem('name')
         document.write("Name: ", name)
+        document.write("Name: ", typeof name)
 
         let age = localStorage.getItem('age')
         document.write("<br>Age: ", age)
+        document.write("<br>Age: ", typeof age)
 
         let isAdmin = localStorage.getItem('isAdmin')
         document.write("<br>Role: ", isAdmin)
         document.write("<br>Role: ", typeof isAdmin)
-        document.write("<br>Role: ", isAdmin ? "Admin" : "Client")
+        document.write("<br>Role: ", isAdmin == 'true' ? "Admin" : "Client")
+
+        // JSON - JavaScript Object Notation
+        // JSON: {key: value}
+        // JSON.stringify(object) --> converts js object into string
+        let fruits = JSON.parse(localStorage.getItem('fruits'))
+        document.write("<br>Fruits: ", fruits)
+        document.write("<br>Fruits: ", typeof fruits)
     </script>
 </body>
 </html>
