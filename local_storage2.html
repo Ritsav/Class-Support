@@ -29,8 +29,13 @@
         document.write("<br>Fruits: ", typeof fruits)
         document.write("<br>Fruits: ", fruits.length)
 
-        let person = localStorage.getItem('person')
+        let person = JSON.parse(localStorage.getItem('person'))
         console.log(person)
+
+        for(let key in person) {
+            document.write(`<br>${key}: ${person[key]}`)
+        }
+        localStorage.removeItem('Name')
     </script>
 </body>
 </html>
