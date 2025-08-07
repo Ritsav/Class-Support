@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage 2</title>
+</head>
+<body>
+
+    <script>
+        let name = localStorage.getItem('name')
+        document.write("Name: ", name)
+
+        let age = localStorage.getItem('age')
+        document.write("<br>Age: ", age)
+
+        let isAdmin = localStorage.getItem('isAdmin')
+        document.write("<br>Role: ", isAdmin)
+        document.write("<br>Role: ", typeof isAdmin)
+        document.write("<br>Role: ", isAdmin ? "Admin" : "Client")
+    </script>
+</body>
+</html>
