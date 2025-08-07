@@ -9,18 +9,24 @@
     <script>
         const fruits = ['apple', 'orange', 'mango']
 
-        function add_fruits(new_fruit) {
-            fruits.push(new_fruit)
+        function add_fruits_async(... fruits_arr) {
+            setTimeout(() => {
+                for(let fruit of fruits_arr) {
+                    fruits.push(fruit)
+                }
+            }, 1000)
         }
 
-        function display() {
-            document.write("<br>Fruits: ", fruits)
+        function display_async() {
+            setTimeout(() => {
+                document.write("<br>Fruits: ", fruits)
+            })
         }
 
-        add_fruits("papaya")
-        display()
-        add_fruits('pear')
-        display()
+        add_fruits_async("papaya", 'banana', 'kiwi')
+        display_async()
+        add_fruits_async('pear')
+        display_async()
     </script>
 </body>
 </html>
