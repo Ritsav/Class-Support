@@ -24,8 +24,15 @@ const phone_validate = () => {
 
     if(!phone.match(/^[0-9]+$/)) {
         display_msg(phone_msg, 'Number must only be digits')
-    } else if(!phone.match(/^.{10}$/)) {
+    }
+    else if (!phone.match(/^[9][78][0123456][0-9]+$/)) {
+        display_msg(phone_msg, "Phone number must begin with followed by 7 or 8, followed by 0 - 6 and then other numbers")
+    }
+    else if(!phone.match(/^.{10}$/)) {
         display_msg(phone_msg, "Name must be 10 characters")
+    } 
+    else{
+        display_msg(phone_msg, "Valid Number", 'green')
     }
 }
 
@@ -37,3 +44,5 @@ function display_msg(element, msg, color = "red") {
 document.getElementById('name').addEventListener(
     'keyup', name_validate
 )
+
+phone_input.addEventListener('keyup', phone_validate)
