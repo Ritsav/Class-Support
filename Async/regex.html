@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+</head>
+
+<body>
+    <!-- 
+    /abc/ -> regex
+
+    /abc/ - 'abc'
+
+    [abcd] -> one character from the collection (a or b or c or d)
+    [a-z] -> lowercase alphabet
+    [A-Z] -> uppercase alphabet
+    [0-9] -> numbers
+    [a-zA-Z] -> alphabets
+    [A-Za-z0-9] -> alphabets & numbers 
+    [+!@#-] -> 
+    
+    meta characters
+    ^ -> start
+    $ -> end
+    . -> single character
+    + -> one or more character
+        a+ -> one or more a
+    * -> 0 or more characters
+        a* -> 0 or more a
+
+    {length}
+    {5} -> 5 character
+        a{5} -> aaaaa
+    
+    {3,10} -> min 3, max 10 chars
+        a{3,10} -> 3 or upto 10 a
+
+    {0,10} -> max 10 chars
+    -->
+
+    <script>
+        let str = 'aay'
+        // let expr = /^a/ // Does it start from 'a'?
+        let expr = /^a{2,5}y$/ // Does it end with 'y'?
+
+        if(str.match(expr)) {
+            document.write("Matched")
+        }
+        else{
+            document.write("Not matched")
+        }
+    </script>
+</body>
+</html>

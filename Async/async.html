@@ -41,27 +41,38 @@
         function add_fruits_promise(new_fruit) {
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    let error = false
+                    let error = true 
                     if (!error) {
                         fruits.push(new_fruit)
                         resolve()
                     }
                     else
                     {
-                        reject()
+                        reject("Something went wrong")
                     }
                 }, 2000)
             })
         }
         
-        add_fruits_promise('pear')
-        .then(() => {
-            display_async()
-        })
-        .catch(() => {
-            document.write("Something went wrong")
-        })
+        // add_fruits_promise('pear')
+        // .then(() => {
+        //     display_async()
+        // })
+        // .catch(() => {
+        //     document.write("Something went wrong")
+        // })
+
         // async await
+        async function demoFunction() {
+            try{
+                await add_fruits_promise('Pear')
+                display_async()
+            }
+            catch(error) {
+                document.write(error)
+            }
+        }
+        demoFunction()
     </script>
 </body>
 </html>
